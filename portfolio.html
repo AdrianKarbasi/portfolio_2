@@ -1,0 +1,957 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;family=Geist:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24;
+      }
+      body {
+        background-color: #051424; /* surface-dim */
+        background-image: radial-gradient(
+          circle at 2px 2px,
+          rgba(51, 65, 85, 0.15) 1px,
+          transparent 0
+        );
+        background-size: 40px 40px;
+      }
+      .technical-card {
+        background-color: #1e293b;
+        border: 1px solid #334155;
+        transition: border-color 0.3s ease;
+      }
+      .technical-card:hover {
+        border-color: #8ed5ff; /* primary */
+      }
+      .glass-header {
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+      /* Reveal on scroll */
+      .reveal {
+        opacity: 0;
+        transform: translateY(8px);
+        transition:
+          opacity 600ms ease,
+          transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .reveal.visible {
+        opacity: 1;
+        transform: none;
+      }
+    </style>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'surface-tint': '#7bd0ff',
+              'on-surface': '#d4e4fa',
+              'inverse-primary': '#00668a',
+              'primary-fixed': '#c4e7ff',
+              outline: '#87929a',
+              'secondary-fixed-dim': '#bcc7de',
+              'surface-bright': '#2c3a4c',
+              'on-primary-container': '#004965',
+              'secondary-fixed': '#d8e3fb',
+              tertiary: '#c5cce6',
+              'on-secondary-fixed-variant': '#3c475a',
+              'on-secondary-container': '#aeb9d0',
+              'surface-variant': '#273647',
+              'inverse-on-surface': '#233143',
+              'surface-container-lowest': '#010f1f',
+              'secondary-container': '#3e495d',
+              'on-tertiary-fixed-variant': '#3f465c',
+              'inverse-surface': '#d4e4fa',
+              'error-container': '#93000a',
+              'on-primary': '#00354a',
+              'on-error': '#690005',
+              'on-tertiary': '#283044',
+              'outline-variant': '#3e484f',
+              'surface-container-high': '#1c2b3c',
+              background: '#051424',
+              'on-background': '#d4e4fa',
+              secondary: '#bcc7de',
+              primary: '#8ed5ff',
+              'surface-container-highest': '#273647',
+              'tertiary-container': '#a9b1ca',
+              'on-secondary': '#263143',
+              surface: '#051424',
+              'primary-container': '#38bdf8',
+              'on-surface-variant': '#bdc8d1',
+              'surface-container': '#122131',
+              'primary-fixed-dim': '#7bd0ff',
+              'surface-container-low': '#0d1c2d',
+              'surface-dim': '#051424',
+              'on-primary-fixed-variant': '#004c69',
+              'on-tertiary-fixed': '#131b2e',
+              'on-error-container': '#ffdad6',
+              'on-primary-fixed': '#001e2c',
+              'tertiary-fixed-dim': '#bec6e0',
+              'tertiary-fixed': '#dae2fd',
+              error: '#ffb4ab',
+              'on-secondary-fixed': '#111c2d',
+              'on-tertiary-container': '#3c4459',
+            },
+            borderRadius: {
+              DEFAULT: '0.125rem',
+              lg: '0.25rem',
+              xl: '0.5rem',
+              full: '0.75rem',
+            },
+            spacing: {
+              'container-max': '1120px',
+              'section-gap-mobile': '64px',
+              'section-gap-desktop': '120px',
+              'stack-sm': '8px',
+              'stack-md': '16px',
+              gutter: '24px',
+              unit: '4px',
+              'stack-lg': '32px',
+            },
+            fontFamily: {
+              'headline-lg-mobile': ['Geist'],
+              display: ['Geist'],
+              'headline-lg': ['Geist'],
+              'code-sm': ['JetBrains Mono'],
+              'body-md': ['Geist'],
+              'headline-md': ['Geist'],
+              'body-lg': ['Geist'],
+              'label-caps': ['JetBrains Mono'],
+            },
+            fontSize: {
+              'headline-lg-mobile': [
+                '24px',
+                { lineHeight: '1.2', fontWeight: '600' },
+              ],
+              display: [
+                '48px',
+                {
+                  lineHeight: '1.1',
+                  letterSpacing: '-0.02em',
+                  fontWeight: '700',
+                },
+              ],
+              'headline-lg': ['32px', { lineHeight: '1.2', fontWeight: '600' }],
+              'code-sm': ['14px', { lineHeight: '1.5', fontWeight: '400' }],
+              'body-md': ['16px', { lineHeight: '1.6', fontWeight: '400' }],
+              'headline-md': ['24px', { lineHeight: '1.4', fontWeight: '500' }],
+              'body-lg': ['18px', { lineHeight: '1.6', fontWeight: '400' }],
+              'label-caps': [
+                '12px',
+                { lineHeight: '1', letterSpacing: '0.1em', fontWeight: '500' },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="text-on-surface selection:bg-primary/30">
+    <!-- TopAppBar -->
+    <header
+      class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-outline-variant dark:border-outline-variant glass-header"
+    >
+      <div
+        class="flex justify-between items-center max-w-container-max mx-auto px-gutter h-16"
+      >
+        <div
+          class="font-headline-md text-headline-md font-bold text-primary dark:text-primary"
+        >
+          Adrian Karbasi
+        </div>
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-stack-lg">
+          <a
+            class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors transition-colors duration-200"
+            href="#about"
+            >Über mich</a
+          >
+          <a
+            class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors transition-colors duration-200"
+            href="#experience"
+            >Erfahrung</a
+          >
+          <a
+            class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors transition-colors duration-200"
+            href="#projects"
+            >Projekte</a
+          >
+          <a
+            class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors transition-colors duration-200"
+            href="#skills"
+            >Fähigkeiten</a
+          >
+          <a
+            class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors transition-colors duration-200"
+            href="#contact"
+            >Kontakt</a
+          >
+          <a
+            href="lebenslauf_2.html"
+            class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors transition-colors duration-200"
+          >
+            Lebenslauf
+          </a>
+        </nav>
+        <!-- Mobile Menu Trigger -->
+        <button class="md:hidden text-primary">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </header>
+    <main class="pt-16">
+      <!-- Hero Section -->
+      <section
+        class="min-h-[819px] flex flex-col justify-center items-center text-center px-gutter py-section-gap-mobile md:py-section-gap-desktop max-w-container-max mx-auto"
+      >
+        <div
+          class="inline-block px-stack-md py-unit bg-primary/10 border border-primary/20 rounded-full mb-stack-lg"
+        >
+          <span class="font-label-caps text-label-caps text-primary uppercase"
+            >Verfügbar für neue Möglichkeiten</span
+          >
+        </div>
+        <h1
+          class="font-display text-display text-on-surface max-w-4xl mb-stack-md leading-tight"
+        >
+          Frontend-Softwareentwickler mit
+          <span class="text-primary">4 Jahren</span> Erfahrung in der
+          Entwicklung barrierefreier, komponentengetriebener Anwendungen.
+        </h1>
+        <p
+          class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-stack-lg"
+        >
+          Erfahrung in der Entwicklung moderner Webanwendungen für Banking,
+          Telekommunikation und Healthcare – mit React, Next.js, Angular, Vue
+          und TypeScript.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-stack-md">
+          <a
+            class="bg-primary text-on-primary px-stack-lg py-stack-md rounded font-label-caps text-label-caps hover:bg-primary-fixed transition-colors text-center active:scale-95 transition-transform"
+            href="#projects"
+          >
+            Projekte ansehen
+          </a>
+          <a
+            class="border border-outline-variant text-on-surface px-stack-lg py-stack-md rounded font-label-caps text-label-caps hover:bg-surface-container transition-colors text-center active:scale-95 transition-transform"
+            href="lebenslauf_2.html"
+          >
+            Zum Lebenslauf
+          </a>
+        </div>
+        <!-- Terminal-like Stats -->
+        <div
+          class="mt-section-gap-mobile grid grid-cols-2 md:grid-cols-4 gap-stack-lg w-full max-w-4xl"
+        >
+          <div class="flex flex-col items-center">
+            <span
+              class="font-code-sm text-code-sm text-primary opacity-60 mb-unit"
+              >ERFAHRUNG</span
+            >
+            <span class="font-headline-md text-headline-md">4+ Jahre</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <span
+              class="font-code-sm text-code-sm text-primary opacity-60 mb-unit"
+              >Commit-Anzahl</span
+            >
+            <span class="font-headline-md text-headline-md">2.5k+</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <span
+              class="font-code-sm text-code-sm text-primary opacity-60 mb-unit"
+              >PROJEKTE</span
+            >
+            <span class="font-headline-md text-headline-md">15+</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <span
+              class="font-code-sm text-code-sm text-primary opacity-60 mb-unit"
+              >ZUFRIEDENHEIT</span
+            >
+            <span class="font-headline-md text-headline-md">100%</span>
+          </div>
+        </div>
+      </section>
+      <section
+        class="px-gutter py-section-gap-mobile md:py-section-gap-desktop max-w-container-max mx-auto"
+        id="about"
+      >
+        <div
+          class="flex flex-col md:flex-row gap-stack-lg items-start mb-stack-lg"
+        >
+          <div class="md:w-1/3">
+            <h2 class="font-headline-lg text-headline-lg mb-stack-sm">
+              Über mich
+            </h2>
+            <p class="font-body-md text-body-md text-on-surface-variant">
+              Frontend-Entwickler mit Fokus auf barrierefreie
+              Benutzeroberflächen, Design-Systeme und moderne
+              JavaScript-Frameworks.
+            </p>
+          </div>
+          <div class="md:w-2/3 space-y-stack-lg">
+            <div
+              class="technical-card p-stack-lg rounded-lg border-l-4 border-l-primary"
+            >
+              <h3
+                class="font-headline-md text-headline-md text-primary mb-stack-sm"
+              >
+                Soziale Kompetenzen
+              </h3>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Teamfähig, freundlich, lernbereit, selbständig und organisiert.
+              </p>
+            </div>
+            <div
+              class="technical-card p-stack-lg rounded-lg border-l-4 border-l-outline-variant"
+            >
+              <h3
+                class="font-headline-md text-headline-md text-on-surface mb-stack-sm"
+              >
+                Sprachen
+              </h3>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Deutsch — Muttersprache, Englisch — fließend.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Experience Section -->
+      <section
+        class="px-gutter py-section-gap-mobile md:py-section-gap-desktop max-w-container-max mx-auto"
+        id="experience"
+      >
+        <div
+          class="flex flex-col md:flex-row gap-stack-lg items-start mb-stack-lg"
+        >
+          <div class="md:w-1/3">
+            <h2 class="font-headline-lg text-headline-lg mb-stack-sm">
+              Beruflicher Werdegang
+            </h2>
+            <p class="font-body-md text-body-md text-on-surface-variant">
+              Vier Jahre praktische Erfahrung in der Frontend-Entwicklung – von
+              Design-Systemen bis zu produktiven Kundenanwendungen.
+            </p>
+          </div>
+          <div class="md:w-2/3 space-y-stack-lg">
+            <div
+              class="technical-card p-stack-lg rounded-lg border-l-4 border-l-primary"
+            >
+              <div class="flex justify-between items-start mb-stack-sm">
+                <div>
+                  <h3 class="font-headline-md text-headline-md text-primary">
+                    Frontend Developer / Engineer
+                  </h3>
+                  <p
+                    class="font-label-caps text-label-caps text-on-surface-variant uppercase mt-unit"
+                  >
+                    Electronic Partner • Januar 2026 - Juni 2026
+                  </p>
+                </div>
+              </div>
+              <ul
+                class="font-body-md text-body-md text-on-surface-variant list-disc list-inside space-y-2"
+              >
+                <li>
+                  Entwicklung und Implementierung von Frontend-Komponenten im
+                  Storybook
+                </li>
+                <li>
+                  Erstellung und Erweiterung von Microfrontends eines B2B Shops
+                </li>
+                <li>Integration von APIs und Anbindung an Backend-Services</li>
+                <li>
+                  Optimierung der bestehenden Codebasis und Verbesserung der
+                  Performance
+                </li>
+                <li>Enge Zusammenarbeit mit Backend-Entwicklern</li>
+                <li>
+                  Regelmäßige Code-Reviews und Sicherstellung der Einhaltung von
+                  Best Practices
+                </li>
+              </ul>
+            </div>
+            <div
+              class="technical-card p-stack-lg rounded-lg border-l-4 border-l-outline-variant"
+            >
+              <div class="flex justify-between items-start mb-stack-sm">
+                <div>
+                  <h3 class="font-headline-md text-headline-md text-on-surface">
+                    Frontend-Softwareingenieur
+                  </h3>
+                  <p
+                    class="font-label-caps text-label-caps text-on-surface-variant uppercase mt-unit"
+                  >
+                    Avenga Germany • 2022 - 2025
+                  </p>
+                </div>
+              </div>
+              <ul
+                class="font-body-md text-body-md text-on-surface-variant list-disc list-inside space-y-2"
+              >
+                <li>
+                  Weiterentwicklung und Vorantreiben eines komponentenbasierten
+                  Designsystems eines Bankunternehmens
+                </li>
+                <li>
+                  Überarbeitung und Erstellung von Komponenten zur Verbesserung
+                  der Barrierefreiheit (WCAG)
+                </li>
+                <li>
+                  Erstellung und Wartung von End-to-End-Tests sowie Unit Tests
+                </li>
+                <li>
+                  Intensiver Austausch mit Kunden, UX/UI-Designern und
+                  Entwicklern
+                </li>
+                <li>
+                  Sicherung der Codequalität durch Konventionen, Reviews und
+                  Pair-Programming
+                </li>
+                <li>
+                  Entwicklung eines firmeninternen Dashboards mit Next.js und
+                  Tailwind CSS
+                </li>
+                <li>
+                  Frontend-Entwicklung responsiver Angebotsstrecken mit Angular
+                  und PrimeNG
+                </li>
+                <li>
+                  Realisierung moderner Webauftritte und einer disease map für
+                  ein Pharmaunternehmen mit React & TypeScript
+                </li>
+              </ul>
+            </div>
+            <div
+              class="technical-card p-stack-lg rounded-lg border-l-4 border-l-outline-variant"
+            >
+              <div class="flex justify-between items-start mb-stack-sm">
+                <div>
+                  <h3 class="font-headline-md text-headline-md text-on-surface">
+                    Auszubildender Fachinformatiker für Anwendungsentwicklung
+                  </h3>
+                  <p
+                    class="font-label-caps text-label-caps text-on-surface-variant uppercase mt-unit"
+                  >
+                    Sevenval / Avenga Germany • 2019 - 2022
+                  </p>
+                </div>
+              </div>
+              <ul
+                class="font-body-md text-body-md text-on-surface-variant list-disc list-inside space-y-2"
+              >
+                <li>
+                  Ausbildung in Anwendungsentwicklung mit ersten Erfahrungen in
+                  HTML, CSS und JavaScript
+                </li>
+                <li>
+                  Umsetzung eigener Lernprojekte und Übernahme erster
+                  eigenständiger Aufgaben
+                </li>
+                <li>
+                  Unterstützung bei Entwicklung von Webanwendungen und internen
+                  Tools
+                </li>
+                <li>
+                  Enge Zusammenarbeit mit erfahrenen Entwicklern und Teilnahme
+                  an Code-Reviews
+                </li>
+                <li>Mitentwicklung von Lösungen in agilen Teams mit Kunden</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Projektbereich (Bento Grid) -->
+      <section
+        class="px-gutter py-section-gap-mobile md:py-section-gap-desktop bg-surface-container-low"
+        id="projects"
+      >
+        <div class="max-w-container-max mx-auto">
+          <div class="flex justify-between items-end mb-stack-lg">
+            <div>
+              <h2 class="font-headline-lg text-headline-lg">
+                Ausgewählte Projekte
+              </h2>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Eine Auswahl von Projekten aus den Bereichen Design-Systeme,
+                Webanwendungen und E-Commerce.
+              </p>
+            </div>
+            <a
+              class="hidden md:flex items-center gap-stack-sm font-label-caps text-label-caps text-primary hover:underline"
+              href="projects.html"
+            >
+              ARCHIV ANSEHEN
+              <span class="material-symbols-outlined text-sm"
+                >arrow_forward</span
+              >
+            </a>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-stack-lg">
+            <!-- Project 1: Large Featured -->
+            <div
+              class="md:col-span-8 group technical-card rounded-xl overflow-hidden flex flex-col"
+            >
+              <div class="relative h-64 md:h-96 overflow-hidden">
+                <img
+                  alt="Liechtensteinische Landesbank Design System"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  src="./llb.PNG"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-surface-dim to-transparent opacity-60"
+                ></div>
+              </div>
+              <div class="p-stack-lg flex flex-col flex-grow">
+                <div class="flex justify-between items-start mb-stack-md">
+                  <h3 class="font-headline-md text-headline-md">
+                    Liechtensteinische Landesbank Design System
+                  </h3>
+                </div>
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant mb-stack-lg flex-grow"
+                >
+                  Weiterentwicklung eines Design Systems für digitale
+                  Banking-Anwendungen inklusive Komponenten, Dokumentation und
+                  automatisierter Tests.
+                </p>
+                <div class="flex flex-wrap gap-stack-sm">
+                  <span
+                    class="font-code-sm text-code-sm px-stack-sm py-unit bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded"
+                    >TypeScript</span
+                  >
+                  <span
+                    class="font-code-sm text-code-sm px-stack-sm py-unit bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded"
+                    >Handlebars</span
+                  >
+                  <span
+                    class="font-code-sm text-code-sm px-stack-sm py-unit bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded"
+                    >SCSS</span
+                  >
+                  <span
+                    class="font-code-sm text-code-sm px-stack-sm py-unit bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded"
+                    >Cypress</span
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Project 2: Side Vertical -->
+            <div
+              class="md:col-span-4 group technical-card rounded-xl overflow-hidden flex flex-col"
+            >
+              <div class="relative h-48 md:h-64 overflow-hidden">
+                <img
+                  alt="Pyur Angebotsstrecke"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  src="./pyur.PNG"
+                />
+              </div>
+              <div class="p-stack-lg flex flex-col flex-grow">
+                <h3 class="font-headline-md text-headline-md mb-stack-sm">
+                  Pyur Angebotsstrecke
+                </h3>
+                <p
+                  class="font-code-sm text-code-sm text-on-surface-variant opacity-70 mb-stack-md"
+                >
+                  Umsetzung einer interaktiven Angebotsstrecke für einen
+                  Telekommunikationsanbieter mit Angular und PrimeNG.
+                </p>
+                <div class="flex flex-wrap gap-stack-sm mt-auto">
+                  <span
+                    class="font-code-sm text-code-sm px-stack-sm py-unit bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded"
+                    >Angular</span
+                  >
+                  <span
+                    class="font-code-sm text-code-sm px-stack-sm py-unit bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded"
+                    >PrimeNG</span
+                  >
+                  <span
+                    class="font-code-sm text-code-sm px-stack-sm py-unit bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded"
+                    >SCSS</span
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Project 3: Wide Bottom -->
+            <div
+              class="md:col-span-12 group technical-card rounded-xl overflow-hidden flex flex-col md:flex-row"
+            >
+              <div class="md:w-1/2 relative h-64 md:h-auto overflow-hidden">
+                <img
+                  alt="Electronic Partner B2B Shop"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  src="./ep.PNG"
+                />
+              </div>
+              <div
+                class="md:w-1/2 p-stack-lg md:p-12 flex flex-col justify-center"
+              >
+                <div class="flex justify-between items-start mb-stack-md">
+                  <h3 class="font-headline-lg text-headline-lg">
+                    Electronic Partner B2B Shop
+                  </h3>
+                </div>
+                <p
+                  class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg"
+                >
+                  Weiterentwicklung eines B2B-Shops mit Web Components, Micro
+                  Frontends, Storybook und REST-API-Anbindung.
+                </p>
+                <div class="flex flex-wrap gap-stack-sm mb-stack-lg">
+                  <span
+                    class="font-code-sm text-code-sm px-stack-sm py-unit bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded"
+                    >Web Components</span
+                  >
+                  <span
+                    class="font-code-sm text-code-sm px-stack-sm py-unit bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded"
+                    >REST API</span
+                  >
+                  <span
+                    class="font-code-sm text-code-sm px-stack-sm py-unit bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded"
+                    >Storybook</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-stack-lg grid grid-cols-1 md:grid-cols-2 gap-stack-lg">
+            <div class="technical-card p-stack-lg rounded-xl">
+              <h3
+                class="font-headline-md text-headline-md text-primary mb-stack-sm"
+              >
+                Projekt-Highlights 2019–2025
+              </h3>
+              <ul
+                class="font-body-md text-body-md text-on-surface-variant list-disc list-inside space-y-3"
+              >
+                <li>
+                  Kundenportal für ein internationales Technologieunternehmen
+                  mit React, Next.js, Tailwind CSS, Firebase Auth und Firestore.
+                </li>
+                <li>
+                  Mitarbeiter-Skills-Management-Client mit Next.js, Tailwind CSS
+                  und Firebase-Rollenverwaltung.
+                </li>
+                <li>
+                  Landingpage für Swiss Life, komponentenbasiertes
+                  Markenerlebnis und interne Pattern Library.
+                </li>
+                <li>
+                  Plattformübergreifende mobile App- und Smart-Home-Lösungen mit
+                  React Native, Expo und CMS-Integration.
+                </li>
+              </ul>
+            </div>
+            <div class="technical-card p-stack-lg rounded-xl">
+              <h3
+                class="font-headline-md text-headline-md text-primary mb-stack-sm"
+              >
+                Tools & Wirkung
+              </h3>
+              <div class="space-y-stack-md">
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Regelmäßige Arbeit mit Testautomatisierung, Code Reviews und
+                  Deployment-Prozessen.
+                </p>
+                <div class="flex flex-wrap gap-stack-sm">
+                  <span
+                    class="font-code-sm text-code-sm px-stack-sm py-unit bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded"
+                    >Cypress</span
+                  >
+                  <span
+                    class="font-code-sm text-code-sm px-stack-sm py-unit bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded"
+                    >Vitest</span
+                  >
+                  <span
+                    class="font-code-sm text-code-sm px-stack-sm py-unit bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded"
+                    >GitLab</span
+                  >
+                  <span
+                    class="font-code-sm text-code-sm px-stack-sm py-unit bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded"
+                    >Docker</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Fähigkeitenbereich -->
+      <section
+        class="px-gutter py-section-gap-mobile md:py-section-gap-desktop max-w-container-max mx-auto"
+        id="skills"
+      >
+        <h2 class="font-headline-lg text-headline-lg text-center mb-stack-lg">
+          Technologien & Tools
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-stack-lg">
+          <!-- Sprachen -->
+          <div class="technical-card p-stack-lg rounded-lg">
+            <div class="flex items-center gap-stack-md mb-stack-lg">
+              <span class="material-symbols-outlined text-primary"
+                >terminal</span
+              >
+              <h3 class="font-headline-md text-headline-md">Sprachen</h3>
+            </div>
+            <div class="space-y-stack-md">
+              <div class="flex flex-wrap gap-stack-sm">
+                <span
+                  class="font-label-caps text-label-caps px-stack-md py-stack-sm bg-surface-container border border-outline-variant rounded"
+                  >HTML</span
+                >
+                <span
+                  class="font-label-caps text-label-caps px-stack-md py-stack-sm bg-surface-container border border-outline-variant rounded"
+                  >CSS / SCSS</span
+                >
+                <span
+                  class="font-label-caps text-label-caps px-stack-md py-stack-sm bg-surface-container border border-outline-variant rounded"
+                  >JavaScript</span
+                >
+                <span
+                  class="font-label-caps text-label-caps px-stack-md py-stack-sm bg-surface-container border border-outline-variant rounded"
+                  >TypeScript</span
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Frameworks -->
+          <div class="technical-card p-stack-lg rounded-lg">
+            <div class="flex items-center gap-stack-md mb-stack-lg">
+              <span class="material-symbols-outlined text-primary">layers</span>
+              <h3 class="font-headline-md text-headline-md">Frameworks</h3>
+            </div>
+            <div class="space-y-stack-md">
+              <div class="flex flex-wrap gap-stack-sm">
+                <span
+                  class="font-label-caps text-label-caps px-stack-md py-stack-sm bg-surface-container border border-outline-variant rounded"
+                  >React</span
+                >
+                <span
+                  class="font-label-caps text-label-caps px-stack-md py-stack-sm bg-surface-container border border-outline-variant rounded"
+                  >Next.js</span
+                >
+                <span
+                  class="font-label-caps text-label-caps px-stack-md py-stack-sm bg-surface-container border border-outline-variant rounded"
+                  >Angular</span
+                >
+                <span
+                  class="font-label-caps text-label-caps px-stack-md py-stack-sm bg-surface-container border border-outline-variant rounded"
+                  >Vue.js</span
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Tools -->
+          <div class="technical-card p-stack-lg rounded-lg">
+            <div class="flex items-center gap-stack-md mb-stack-lg">
+              <span class="material-symbols-outlined text-primary">build</span>
+              <h3 class="font-headline-md text-headline-md">Tools &amp; Ops</h3>
+            </div>
+            <div class="space-y-stack-md">
+              <div class="flex flex-wrap gap-stack-sm">
+                <span
+                  class="font-label-caps text-label-caps px-stack-md py-stack-sm bg-surface-container border border-outline-variant rounded"
+                  >Cypress</span
+                >
+                <span
+                  class="font-label-caps text-label-caps px-stack-md py-stack-sm bg-surface-container border border-outline-variant rounded"
+                  >Jest / Vitest</span
+                >
+                <span
+                  class="font-label-caps text-label-caps px-stack-md py-stack-sm bg-surface-container border border-outline-variant rounded"
+                  >Storybook</span
+                >
+                <span
+                  class="font-label-caps text-label-caps px-stack-md py-stack-sm bg-surface-container border border-outline-variant rounded"
+                  >ESLint / Prettier</span
+                >
+              </div>
+              <div class="flex flex-wrap gap-stack-sm mt-stack-sm">
+                <span
+                  class="font-label-caps text-label-caps px-stack-md py-stack-sm bg-surface-container border border-outline-variant rounded"
+                  >npm / yarn</span
+                >
+                <span
+                  class="font-label-caps text-label-caps px-stack-md py-stack-sm bg-surface-container border border-outline-variant rounded"
+                  >Git / Bitbucket / GitLab</span
+                >
+                <span
+                  class="font-label-caps text-label-caps px-stack-md py-stack-sm bg-surface-container border border-outline-variant rounded"
+                  >Docker</span
+                >
+                <span
+                  class="font-label-caps text-label-caps px-stack-md py-stack-sm bg-surface-container border border-outline-variant rounded"
+                  >TYPO3</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Contact/CTA Section -->
+      <section
+        class="px-gutter py-section-gap-mobile md:py-section-gap-desktop bg-primary text-on-primary"
+        id="contact"
+      >
+        <div class="max-w-container-max mx-auto text-center">
+          <h2 class="font-headline-lg text-headline-lg mb-stack-md">
+            Auf der Suche nach einer neuen Herausforderung
+          </h2>
+          <p
+            class="font-body-lg text-body-lg opacity-90 max-w-2xl mx-auto mb-stack-lg"
+          >
+            Aktuell suche ich eine Position als Frontend-Entwickler, in der ich
+            meine Erfahrungen mit modernen Webtechnologien, Design-Systemen und
+            barrierefreien Benutzeroberflächen einbringen kann.
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-stack-md">
+            <a
+              class="bg-on-primary text-primary px-stack-lg py-stack-md rounded font-label-caps text-label-caps hover:bg-on-primary-fixed transition-colors active:scale-95 transition-transform"
+              href="mailto:adrian977@hotmail.de"
+            >
+              Adrian kontaktieren
+            </a>
+            <a
+              class="border border-on-primary text-on-primary px-stack-lg py-stack-md rounded font-label-caps text-label-caps hover:bg-on-primary/10 transition-colors active:scale-95 transition-transform"
+              href="https://www.linkedin.com/in/adrian-karbasi-99965a339/"
+            >
+              LinkedIn ansehen
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="w-full bg-surface-container-low dark:bg-surface-container-low border-t border-outline-variant dark:border-outline-variant"
+    >
+      <div
+        class="flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto px-gutter py-stack-lg"
+      >
+        <div class="mb-stack-md md:mb-0">
+          <div
+            class="font-headline-sm text-headline-sm font-bold text-on-surface"
+          >
+            Adrian Karbasi
+          </div>
+          <p
+            class="font-code-sm text-code-sm text-on-surface-variant opacity-60 mt-unit"
+          >
+            Entwickelt mit HTML, Tailwind CSS und JavaScript.
+          </p>
+        </div>
+        <div class="flex gap-stack-lg">
+          <a
+            class="font-code-sm text-code-sm text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-all duration-200"
+            href="https://www.linkedin.com/in/adrian-karbasi-99965a339/"
+            >LinkedIn</a
+          >
+          <a
+            class="font-code-sm text-code-sm text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-all duration-200"
+            href="mailto:adrian977@hotmail.de"
+            >E-Mail</a
+          >
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth',
+          });
+        });
+      });
+
+      // Intersection Observer for active nav state
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('nav a');
+
+      window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (pageYOffset >= sectionTop - 150) {
+            current = section.getAttribute('id');
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove(
+            'text-primary',
+            'font-bold',
+            'border-b-2',
+            'border-primary',
+            'pb-1'
+          );
+          link.classList.add('text-on-surface-variant');
+          if (link.getAttribute('href').slice(1) === current) {
+            link.classList.add(
+              'text-primary',
+              'font-bold',
+              'border-b-2',
+              'border-primary',
+              'pb-1'
+            );
+            link.classList.remove('text-on-surface-variant');
+          }
+        });
+      });
+      // Reveal-on-scroll observer
+      document.addEventListener('DOMContentLoaded', () => {
+        const selector = 'section, .technical-card, .group';
+        const nodes = Array.from(document.querySelectorAll(selector));
+        nodes.forEach((n) => n.classList.add('reveal'));
+
+        const observer = new IntersectionObserver(
+          (entries, obs) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+
+              entry.target.classList.add('visible');
+              obs.unobserve(entry.target);
+            });
+          },
+          {
+            threshold: 0,
+            rootMargin: '0px 0px -15% 0px',
+          }
+        );
+
+        document.querySelectorAll('.reveal').forEach((el, i) => {
+          // small stagger
+          el.style.transitionDelay = `${Math.min(i * 60, 300)}ms`;
+          observer.observe(el);
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+=== PAGE 1 ===
+KONT AKT
+SOFT SKILLS
+Teamfähig
+Freundlich
+Lernbereit
+Selbständig
+Organisiert
+SPRACHEN
+Deutsch:  MutterspracheAdrian Karbasi
+Hembergstraße 4
+50226 Frechen
+015738256953
+adrian977@hotmail.de
+18.01.1997BERUFSERF AHRUNG
+Software Engineer Frontend  – Avenga Germany , Köln (2022 – aktuell)
+Frontend Developer
+Langfristige W eiterentwicklung und das V orantreiben eines komponentenbasierten
+Designsystems eines Bankunternehmens
+Überarbeitung und Erstellung von Komponenten zur V erbesserung der
+Barrierefreiheit gemäß WCAG Richtlinien
+Erstellung und W artung von End-to-End-T ests, sowie Unit Tests
+Intensiver Austausch mit Kunden
+Enger Austausch mit anderen Entwicklern sowie UX/UI-Designern
+Erstellung von detaillierten Schätzungen
+Sicherung der Codequalität durch Einsatz von Konventionen, Reviews und Pair-
+Programming
+Entwicklung eines firmeninternen Dashboards für Kunden. Realisiert mit Next.js und
+Tailwind CSS
+Frontend-Entwicklung einer responsiven Angebotsstrecke für einen Internetanbieter
+auf Basis von Angular und PrimeNG
+Realisierung eines modernen W ebauftritts, sowie einer disease map für ein
+Pharmaunternehmen mithilfe von React und TypeScript
+Auszubildender Fachinformatiker für Anwendungsentwicklung  – Sevenval/A venga
+Germany , Köln (2019 – 2022)
+Ausbildung zum Fachinformatiker – Fachrichtung Anwendungsentwicklung
+Erste Erfahrungen mit HTML, CSS und JavaScript
+Umsetzung eigener Lernprojekte
+Einarbeitung in verschiedenste Kundenprojekte inklusive Übernahme erster
+eigenständiger Aufgaben
+AUSBILDUNG
+Georg-Simon-Ohm-Berufskolleg  – Köln (2019 – 2022)
+BM – Bildung in Medienberufen  – Köln (2016 – 2019)
+Schulische Ausbildung zum Informationstechnischen Assistenten (IT A)
+FACHKENNTNISSE
+Programmiersprachen & Frameworks:
+HTML, CSS/SCSS, BEM, JavaScript, TypeScript, Node.js, React, V ue.js
+(Grundkenntnisse), Angular (Grundkenntnisse), Next.js, Handlebars, JSON, W eb
+Components (Lit)
+Testing & T ooling:
+Cypress, Jest, V itest, Storybook, ESLint, Prettier , npm/yarn, Style-Dictionary
+Build- & DevOps-W erkzeuge:
+Webpack (Grundkenntnisse), V ite, Gulp, Docker (Grundkenntnisse), Git, Bitbucket
+Datenbanken & Backend:
+MySQL, SQLite, Firebase, Grundlagen in Java und C#,
+Content-Management-Systeme:
+TYPO3 (Grundkenntnisse)
+TOOLS
+Versionierung & Kollaboration:  GitLab, GitHub, Bitbucket
+Editoren & IDEs:  Visual Studio Code
+Projektmanagement:  Jira, Confluence, Scrum/Kanban
+
+=== PAGE 2 ===
+Englisch Design & Prototyping:  Figma, Zeplin, Sketch
+Browser:  Chrome, Firefox, Safari
+Betriebssysteme:  macOS, Windows
+SONSTIGES
+Nebentätigkeit als W ebseitenbetreuer bei der W achswandel UG (seit Juni 2025)
+Servicekraft im Getränkebereich der Clarenbach gGmbH (2016 – 2022)
+

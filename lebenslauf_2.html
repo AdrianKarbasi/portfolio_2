@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Adrian Karbasi — Frontend Engineer — Lebenslauf</title>
+    <meta name="author" content="Adrian Karbasi" />
+    <meta
+      name="description"
+      content="Lebenslauf von Adrian Karbasi — Frontend Software Engineer"
+    />
+    <style>
+      /* ── Reset & Base ── */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --navy: #1a2744;
+        --navy2: #233060;
+        --accent: #3b82f6;
+        --light: #f0f4ff;
+        --text: #1e1e2e;
+        --muted: #5a6482;
+        --border: #d1d8f0;
+        --white: #ffffff;
+        --sidebar-w: 240px;
+        --font: 'Segoe UI', system-ui, sans-serif;
+      }
+
+      html {
+        font-size: 12pt;
+      }
+      body {
+        font-family: var(--font);
+        color: var(--text);
+        background: var(--white);
+      }
+
+      /* ── Page Shell ── */
+      .sheet {
+        display: flex;
+        min-height: 297mm;
+        width: 210mm;
+        margin: 0 auto;
+        box-shadow: 0 4px 32px rgba(0, 0, 0, 0.12);
+      }
+
+      /* ── Sidebar ── */
+      .sidebar {
+        width: var(--sidebar-w);
+        flex-shrink: 0;
+        background: var(--navy);
+        color: var(--white);
+        padding: 28px 20px 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .profile {
+        text-align: center;
+      }
+
+      .photo {
+        width: 88px;
+        height: 88px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto 12px;
+        border: 3px solid rgba(255, 255, 255, 0.25);
+      }
+      .photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .name {
+        font-size: 1.25rem;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+        line-height: 1.2;
+        margin-bottom: 8px;
+      }
+
+      .tagline {
+        font-size: 0.72rem;
+        color: rgba(255, 255, 255, 0.75);
+        line-height: 1.5;
+        margin-bottom: 6px;
+      }
+
+      .contact-list {
+        list-style: none;
+        font-size: 0.7rem;
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.9;
+        margin-top: 8px;
+      }
+      .contact-list a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      /* ── Sidebar Sections ── */
+      .sidebar-section {
+      }
+
+      .sidebar-section h2 {
+        font-size: 0.65rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        color: var(--accent);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        padding-bottom: 5px;
+        margin-bottom: 9px;
+      }
+
+      .sidebar-section p {
+        font-size: 0.72rem;
+        color: rgba(255, 255, 255, 0.85);
+        line-height: 1.6;
+      }
+
+      .sidebar-section ul {
+        list-style: none;
+        font-size: 0.72rem;
+        color: rgba(255, 255, 255, 0.85);
+        line-height: 1.85;
+      }
+
+      .sidebar-section ul li::before {
+        content: '·';
+        margin-right: 5px;
+        color: var(--accent);
+      }
+
+      /* ── Main ── */
+      .main {
+        flex: 1;
+        padding: 28px 26px 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        background: var(--white);
+      }
+
+      /* ── Section Headings ── */
+      .main-section h3 {
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.3px;
+        color: var(--navy);
+        border-bottom: 2px solid var(--accent);
+        padding-bottom: 4px;
+        margin-bottom: 12px;
+      }
+
+      /* ── Job Entries ── */
+      .job {
+        margin-bottom: 14px;
+      }
+      .job:last-child {
+        margin-bottom: 0;
+      }
+
+      .job-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 2px;
+      }
+
+      .job-title {
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: var(--navy2);
+      }
+
+      .job-period {
+        font-size: 0.68rem;
+        color: var(--muted);
+        white-space: nowrap;
+        font-weight: 500;
+      }
+
+      .job-tech {
+        font-size: 0.67rem;
+        color: var(--accent);
+        margin-bottom: 5px;
+        font-style: italic;
+      }
+
+      .job ul {
+        list-style: none;
+        padding: 0;
+        font-size: 0.72rem;
+        color: var(--text);
+        line-height: 1.55;
+      }
+
+      .job ul li {
+        padding-left: 1em;
+        position: relative;
+        margin-bottom: 3px;
+      }
+      .job ul li::before {
+        content: '▸';
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-size: 0.6rem;
+        top: 2px;
+      }
+
+      /* ── Skills Grid ── */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px 16px;
+      }
+
+      .skill-group strong {
+        display: block;
+        font-size: 0.68rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        color: var(--navy2);
+        margin-bottom: 3px;
+      }
+
+      .skill-group p {
+        font-size: 0.71rem;
+        color: var(--text);
+        line-height: 1.55;
+      }
+
+      /* ── Education ── */
+      .edu-entry {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 12px;
+        font-size: 0.72rem;
+        margin-bottom: 5px;
+      }
+      .edu-entry .edu-name {
+        font-weight: 600;
+        flex: 1;
+        min-width: 0;
+      }
+      .edu-entry .edu-period {
+        color: var(--muted);
+        font-size: 0.68rem;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      /* ── ATS Hidden Keywords (invisible to human, machine-readable) ── */
+      .ats-keywords {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        opacity: 0;
+        font-size: 1px;
+        color: transparent;
+        pointer-events: none;
+      }
+
+      /* ── Export Footer ── */
+      .export-footer {
+        display: flex;
+        justify-content: center;
+        padding: 16px;
+      }
+      .export-btn {
+        padding: 8px 20px;
+        background: var(--navy);
+        color: var(--white);
+        border: none;
+        border-radius: 6px;
+        font-size: 0.8rem;
+        cursor: pointer;
+        font-family: var(--font);
+      }
+      .export-btn:hover {
+        background: var(--navy2);
+      }
+
+      /* ── Print ── */
+      @media print {
+        html {
+          font-size: 12pt;
+        }
+        body {
+          background: white;
+        }
+        .export-footer {
+          display: none;
+        }
+        .sheet {
+          width: 100%;
+          min-height: auto;
+          box-shadow: none;
+          page-break-inside: avoid;
+        }
+        .job {
+          page-break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ATS-readable hidden keyword block -->
+    <div class="ats-keywords" aria-hidden="true">
+      Frontend Engineer, Frontend Developer, Software Engineer Frontend,
+      TypeScript, JavaScript, React, React.js, Next.js, Web Components, Lit,
+      HTML5, CSS3, SCSS, Sass, Design System, Storybook, Accessibility, WCAG,
+      BFSG, Barrierefreiheit, Micro Frontend, Micro-Frontend-Architektur,
+      Angular, PrimeNG, Tailwind CSS, Firebase, Firestore, Handlebars, Vue.js,
+      Cypress, Vitest, Jest, Unit Test, End-to-End Test, E2E Test, Git, GitLab,
+      GitHub, Bitbucket, Docker, Webpack, Vite, Gulp, Babel, ESLint, Stylelint,
+      Prettier, NPM, BEM, AG Grid, Style Dictionary, REST API,
+      REST-Schnittstellen, Komponenten, Komponentenbibliothek, Figma, Zeplin,
+      Sketch, Jira, Confluence, Scrum, Kanban, Agile, Code Review, Pair
+      Programming, CI/CD, Jenkins, BrowserStack, Banking, Versicherung,
+      Telekommunikation, Pharma, E-Commerce, React Native, Expo, Next.js,
+      Firebase Authentication, TypeScript Migration, XSLT, TYPO3, PHP, MySQL,
+      GitHub Copilot, KI-gestützte Entwicklung, AI Assisted Development, Prompt
+      Engineering, Claude, ChatGPT, Festanstellung, Vollzeit, Köln, Frechen,
+      NRW, Deutschland
+    </div>
+
+    <div class="sheet">
+      <!-- ══ SIDEBAR ══ -->
+      <aside class="sidebar">
+        <div class="profile">
+          <div class="photo">
+            <img src="ich.jpeg" alt="Foto von Adrian Karbasi" />
+          </div>
+          <h1 class="name">Adrian Karbasi</h1>
+          <p class="tagline">
+            Frontend Engineer<br />4+ Jahre Projekterfahrung<br />React ·
+            TypeScript · Design Systems
+          </p>
+          <ul class="contact-list">
+            <li>Hembergstraße 4, 50226 Frechen</li>
+            <li><a href="tel:+4915738256953">0157 38256953</a></li>
+            <li>
+              <a href="mailto:adrian977@hotmail.de">adrian977@hotmail.de</a>
+            </li>
+            <li>Geburtsdatum: 18.01.1997</li>
+          </ul>
+        </div>
+
+        <div class="sidebar-section">
+          <h2>Profil</h2>
+          <p>
+            Frontend Engineer mit über 4 Jahren Erfahrung in der Entwicklung
+            moderner Webanwendungen, Design Systeme und komponentenbasierter
+            Architekturen. Schwerpunkt auf TypeScript, React, Next.js, Web
+            Components (Lit), Accessibility (WCAG/BFSG), Storybook und
+            automatisierter Qualitätssicherung. Projekterfahrung in Banking,
+            Versicherung, Telekommunikation, Pharma und E-Commerce.
+          </p>
+        </div>
+
+        <div class="sidebar-section">
+          <h2>Kernkompetenzen</h2>
+          <ul>
+            <li>TypeScript &amp; JavaScript</li>
+            <li>React &amp; Next.js</li>
+            <li>Web Components (Lit)</li>
+            <li>Design Systems &amp; Storybook</li>
+            <li>Accessibility (WCAG / BFSG)</li>
+            <li>Micro-Frontend-Architekturen</li>
+            <li>Cypress, Vitest &amp; Jest</li>
+            <li>UI Engineering</li>
+            <li>AI Assisted Development</li>
+          </ul>
+        </div>
+
+        <div class="sidebar-section">
+          <h2>Sprachen</h2>
+          <ul>
+            <li>Deutsch — Muttersprache</li>
+            <li>Englisch — fließend</li>
+          </ul>
+        </div>
+
+        <div class="sidebar-section">
+          <h2>Sonstiges</h2>
+          <ul>
+            <li>Webseitenbetreuer Wachswandel (2025)</li>
+            <li>Servicekraft, Clarenbach gGmbH (2016–2022)</li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- ══ MAIN ══ -->
+      <main class="main">
+        <!-- BERUFSERFAHRUNG -->
+        <section class="main-section">
+          <h3>Berufserfahrung</h3>
+
+          <article class="job">
+            <div class="job-header">
+              <span class="job-title"
+                >Frontend Developer / Engineer — Electronic Partner</span
+              >
+              <span class="job-period">01/2026 – 06/2026</span>
+            </div>
+            <p class="job-tech">
+              TypeScript, React, Storybook, Micro-Frontend, REST API, Git
+            </p>
+            <ul>
+              <li>
+                Entwicklung und Erweiterung wiederverwendbarer UI-Komponenten in
+                einer Storybook-basierten Komponentenbibliothek
+              </li>
+              <li>
+                Weiterentwicklung einer Micro-Frontend-Architektur für einen
+                B2B-E-Commerce-Shop
+              </li>
+              <li>
+                Integration und Anbindung von Backend-Services und
+                REST-Schnittstellen
+              </li>
+              <li>
+                Performance-Optimierung, Wartbarkeit und Verbesserung der
+                Benutzerfreundlichkeit bestehender Frontend-Anwendungen
+              </li>
+              <li>
+                Durchführung von Code Reviews und Sicherstellung einheitlicher
+                Entwicklungsstandards
+              </li>
+              <li>
+                Produktiver Einsatz von KI-Werkzeugen (GitHub Copilot, Claude)
+                zur Beschleunigung von Entwicklung, Refactoring und
+                Dokumentation
+              </li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <div class="job-header">
+              <span class="job-title"
+                >Software Engineer Frontend — Avenga Germany GmbH, Köln</span
+              >
+              <span class="job-period">06/2022 – 12/2025</span>
+            </div>
+            <p class="job-tech">
+              TypeScript, JavaScript, Handlebars, SCSS, Web Components, Lit,
+              Cypress, Vitest, Webpack, Storybook, Angular, React, Next.js,
+              Tailwind CSS, Firebase
+            </p>
+            <ul>
+              <li>
+                Langfristige Entwicklung und Weiterentwicklung eines
+                komponentenbasierten Design Systems für digitale
+                Banking-Plattformen (Liechtensteinische Landesbank,
+                02/2024–12/2025)
+              </li>
+              <li>
+                Erstellung barrierefreier Komponenten nach WCAG-Richtlinien und
+                BFSG-Anforderungen; Accessibility-Audits und -Verbesserungen
+              </li>
+              <li>
+                Migration von JavaScript nach TypeScript; Einführung
+                automatisierter Teststrategien mit Cypress und Vitest
+              </li>
+              <li>
+                Entwicklung einer Angebotsstrecke mit Angular und TypeScript für
+                ein deutsches Telekommunikationsunternehmen (Pyur,
+                01/2023–05/2023)
+              </li>
+              <li>
+                Aufbau eines Kundenportals mit React, Next.js, Tailwind CSS und
+                Firebase (Avenga intern, 10/2023–01/2024)
+              </li>
+              <li>
+                Entwicklung einer Skill-Management-Applikation mit Next.js,
+                Tailwind CSS und Firebase (06/2023–10/2023)
+              </li>
+              <li>
+                Frontend-Entwicklung für eine React-basierte
+                Forschungsdaten-Applikation (Boehringer Ingelheim,
+                07/2022–12/2022)
+              </li>
+              <li>
+                Enge Zusammenarbeit mit UX/UI-Designern und Kunden; Pair
+                Programming, Code Reviews, agile Methoden (Scrum/Kanban)
+              </li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <div class="job-header">
+              <span class="job-title"
+                >Frontend Engineer — Avenga Germany / Sevenval, Köln</span
+              >
+              <span class="job-period">12/2019 – 05/2022</span>
+            </div>
+            <p class="job-tech">
+              HTML5, CSS/SCSS, JavaScript, TypeScript, React, React Native,
+              Expo, XSLT, TYPO3, PHP, Cypress, Jest, Docker, GitLab
+            </p>
+            <ul>
+              <li>
+                Entwicklung und Wartung mobiler Apps mit React Native und Expo
+                für Versicherungsvorgänge (Swiss Life, 10/2020–01/2021)
+              </li>
+              <li>
+                Feature-Entwicklung und Komponentenbibliothek mit React und
+                TypeScript für eine Smart-Home-Applikation (Scalara,
+                12/2019–07/2020)
+              </li>
+              <li>
+                Frontend-Entwicklung einer mobilen Webseite für
+                plattformübergreifende Zeitungs-Services mit XSLT und SCSS (FAZ,
+                04/2021–05/2022)
+              </li>
+              <li>
+                Umsetzung und Wartung von TYPO3-Komponenten mit HTML5, CSS und
+                PHP (GVV, 01/2021–02/2022)
+              </li>
+              <li>
+                Umsetzung einer Landingpage für einen Versicherungsanbieter
+                (Swiss Life, 12/2022–02/2023)
+              </li>
+            </ul>
+          </article>
+        </section>
+
+        <!-- AUSBILDUNG -->
+        <section class="main-section">
+          <h3>Ausbildung</h3>
+
+          <div class="edu-entry">
+            <span class="edu-name"
+              >Ausbildung: Fachinformatiker für Anwendungsentwicklung —
+              Sevenval/Avenga Germany, Köln</span
+            >
+            <span class="edu-period">2019–2022</span>
+          </div>
+          <div class="edu-entry">
+            <span class="edu-name">Georg-Simon-Ohm-Berufskolleg — Köln</span>
+            <span class="edu-period">2019–2022</span>
+          </div>
+          <div class="edu-entry">
+            <span class="edu-name"
+              >BM – Bildung in Medienberufen, Köln — Informationstechnischer
+              Assistent (ITA)</span
+            >
+            <span class="edu-period">2016–2019</span>
+          </div>
+        </section>
+
+        <!-- TECHNOLOGIEN -->
+        <section class="main-section">
+          <h3>Technologien &amp; Fachkenntnisse</h3>
+
+          <div class="skills-grid">
+            <div class="skill-group">
+              <strong>Kerntechnologien</strong>
+              <p>
+                TypeScript, JavaScript (ES6+), React, Next.js, HTML5, CSS3,
+                SCSS, Web Components (Lit)
+              </p>
+            </div>
+            <div class="skill-group">
+              <strong>Architektur &amp; UI Engineering</strong>
+              <p>
+                Design Systems, Storybook, Micro-Frontend-Architektur,
+                Accessibility (WCAG 2.1 / BFSG), Responsive Design, BEM
+              </p>
+            </div>
+            <div class="skill-group">
+              <strong>Testing &amp; Qualitätssicherung</strong>
+              <p>
+                Cypress, Vitest, Jest, End-to-End Tests, Unit Tests, Code
+                Reviews, Pair Programming
+              </p>
+            </div>
+            <div class="skill-group">
+              <strong>Frameworks &amp; Libraries</strong>
+              <p>
+                Angular, PrimeNG, Tailwind CSS, Firebase (Auth, Firestore,
+                Storage), Handlebars, React Native, Expo, Vue.js, AG Grid
+              </p>
+            </div>
+            <div class="skill-group">
+              <strong>Tooling &amp; DevOps</strong>
+              <p>
+                Git, GitLab, GitHub, Bitbucket, Docker, Vite, Webpack, Gulp,
+                Babel, ESLint, Stylelint, Prettier, NPM, CI/CD, Jenkins
+              </p>
+            </div>
+            <div class="skill-group">
+              <strong>Weitere Tools</strong>
+              <p>
+                Figma, Zeplin, Sketch, Jira, Confluence, VS Code, Scrum, Kanban,
+                BrowserStack, Postman, GitHub Copilot, Style Dictionary
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="export-footer">
+      <button class="export-btn" onclick="exportPDF()">
+        &#128196; PDF exportieren
+      </button>
+    </div>
+
+    <script>
+      function exportPDF() {
+        alert(
+          'Hinweis:\n\n1. Aktivieren Sie "Hintergrundgrafiken"\n2. Deaktivieren Sie "Kopf- und Fußzeilen" (unter "Weitere Einstellungen")\n3. Klicken Sie "Als PDF speichern"'
+        );
+        window.print();
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Adrian Karbasi — Projektarchiv</title>
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="author" content="Adrian Karbasi" />
+    <meta
+      name="description"
+      content="Projektarchiv von Adrian Karbasi — Frontend Engineer mit 4+ Jahren Erfahrung"
+    />
+    <style>
+      :root {
+        --primary: #6366f1;
+        --on-primary: #ffffff;
+        --surface: #ffffff;
+        --on-surface: #1f1f1f;
+        --on-surface-variant: #49454e;
+        --outline-variant: #cac4d0;
+        --surface-container-low: #f9f8fd;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          'Helvetica Neue', Arial, sans-serif;
+        color: var(--on-surface);
+        background: var(--surface);
+        line-height: 1.6;
+      }
+
+      header {
+        background: linear-gradient(135deg, var(--primary) 0%, #7c3aed 100%);
+        color: var(--on-primary);
+        padding: 4rem 2rem;
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+      }
+
+      header p {
+        font-size: 1.1rem;
+        opacity: 0.95;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .back-link {
+        display: inline-block;
+        margin-bottom: 2rem;
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+
+      .back-link:hover {
+        color: #7c3aed;
+      }
+
+      .project {
+        background: var(--surface-container-low);
+        border-left: 4px solid var(--primary);
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border-radius: 8px;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+
+      .project:hover {
+        transform: translateX(4px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .project-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 1.5rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .project h2 {
+        font-size: 1.5rem;
+        color: var(--primary);
+        margin: 0;
+        flex: 1;
+        min-width: 200px;
+      }
+
+      .project-period {
+        font-size: 0.9rem;
+        color: var(--on-surface-variant);
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .project-company {
+        font-size: 0.9rem;
+        color: var(--on-surface-variant);
+        margin-top: 0.25rem;
+      }
+
+      .project-description {
+        margin-bottom: 1.5rem;
+        color: var(--on-surface-variant);
+        font-size: 0.95rem;
+      }
+
+      .project ul {
+        list-style: none;
+        margin-bottom: 1.5rem;
+        margin-left: 0;
+      }
+
+      .project li {
+        padding-left: 1.5rem;
+        margin-bottom: 0.75rem;
+        position: relative;
+        color: var(--on-surface-variant);
+      }
+
+      .project li:before {
+        content: '●';
+        position: absolute;
+        left: 0;
+        color: var(--primary);
+      }
+
+      .tools-section {
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--outline-variant);
+      }
+
+      .tools-label {
+        font-weight: 700;
+        color: var(--on-surface);
+        display: block;
+        margin-bottom: 0.75rem;
+        font-size: 0.9rem;
+      }
+
+      .tools-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .tool-tag {
+        background: rgba(99, 102, 241, 0.1);
+        border: 1px solid var(--primary);
+        color: var(--primary);
+        padding: 0.4rem 0.8rem;
+        border-radius: 4px;
+        font-size: 0.85rem;
+        font-weight: 500;
+      }
+
+      .nav-buttons {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+      }
+
+      .nav-btn {
+        background: var(--primary);
+        color: var(--on-primary);
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background 0.2s;
+        cursor: pointer;
+        font-size: 0.9rem;
+      }
+
+      .nav-btn:hover {
+        background: #7c3aed;
+      }
+
+      .nav-btn.secondary {
+        background: transparent;
+        border: 1px solid var(--outline-variant);
+        color: var(--on-surface);
+      }
+
+      .nav-btn.secondary:hover {
+        background: var(--surface-container-low);
+      }
+
+      footer {
+        background: var(--surface-container-low);
+        padding: 2rem;
+        margin-top: 4rem;
+        text-align: center;
+        color: var(--on-surface-variant);
+        font-size: 0.9rem;
+        border-top: 1px solid var(--outline-variant);
+      }
+
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 1.8rem;
+        }
+
+        header p {
+          font-size: 1rem;
+        }
+
+        .project-header {
+          flex-direction: column;
+        }
+
+        .project h2 {
+          width: 100%;
+        }
+
+        .container {
+          padding: 0 1rem;
+        }
+
+        .project {
+          padding: 1.5rem;
+        }
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --surface: #1f1f1f;
+          --on-surface: #ffffff;
+          --on-surface-variant: #b0b0b0;
+          --outline-variant: #4a4a4a;
+          --surface-container-low: #2a2a2a;
+        }
+
+        body {
+          background: var(--surface);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Projektarchiv</h1>
+      <p>Eine Auswahl von Projekten aus 4+ Jahren Frontend-Entwicklung</p>
+    </header>
+
+    <div class="container">
+      <a href="portfolio.html" class="back-link">← Zurück zur Portfolio</a>
+
+      <div class="nav-buttons">
+        <a href="#" class="nav-btn">Alle Projekte</a>
+      </div>
+
+      <!-- Project 1 -->
+      <div class="project">
+        <div class="project-header">
+          <div>
+            <h2>Liechtensteinische Landesbank — Design System</h2>
+            <p class="project-company">Frontend Engineer</p>
+            <p class="project-period">02/2024 – aktuell</p>
+          </div>
+        </div>
+        <div class="project-description">
+          Frontend Engineer für die Konzeption und Entwicklung eines Design
+          Systems für plattformübergreifende Banken-Services.
+        </div>
+        <ul>
+          <li>
+            Erstellung von Frontend Komponenten mit Handlebars, SCSS und
+            JavaScript/TypeScript
+          </li>
+          <li>
+            Erstellung umfangreicher Dokumentationen, inklusive der
+            JS-API-Beschreibungen der Komponenten für alle Stakeholder
+          </li>
+          <li>Migration von JavaScript nach TypeScript</li>
+          <li>
+            Planung und Integration von Teststrategien zur automatisierten
+            Qualitätssicherung mit Cypress & Vitest
+          </li>
+          <li>Enger Austausch mit UI/UX bei der Konzeption</li>
+          <li>Accessibility Improvements für das BFSG</li>
+        </ul>
+        <div class="tools-section">
+          <span class="tools-label">Tools & Technologien:</span>
+          <div class="tools-list">
+            <span class="tool-tag">TypeScript/JavaScript</span>
+            <span class="tool-tag">HTML5</span>
+            <span class="tool-tag">CSS/SCSS</span>
+            <span class="tool-tag">BEM</span>
+            <span class="tool-tag">Handlebars</span>
+            <span class="tool-tag">Cypress</span>
+            <span class="tool-tag">Vitest</span>
+            <span class="tool-tag">Webpack</span>
+            <span class="tool-tag">Design Systems</span>
+            <span class="tool-tag">Accessibility</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project">
+        <div class="project-header">
+          <div>
+            <h2>Pyur — Angebotsstrecke</h2>
+            <p class="project-company">Frontend Engineer</p>
+            <p class="project-period">01/2023 – 05/2023</p>
+          </div>
+        </div>
+        <div class="project-description">
+          Konzeption und Entwicklung einer Angebotsstrecke für einen
+          Telekommunikationsunternehmen mit Sitz in Deutschland.
+        </div>
+        <ul>
+          <li>Erstellung von Frontend Komponenten mit Angular</li>
+          <li>Umsetzung des Layouts durch den Einsatz von SCSS</li>
+          <li>Realisierung einer Angebotsstrecke mit Angular und TypeScript</li>
+          <li>Verwendung und Integration von PrimeNG</li>
+          <li>
+            Sicherung der Codequalität durch Einsatz von Konventionen, Reviews
+            und Pair-Programming
+          </li>
+        </ul>
+        <div class="tools-section">
+          <span class="tools-label">Tools & Technologien:</span>
+          <div class="tools-list">
+            <span class="tool-tag">Angular</span>
+            <span class="tool-tag">CSS/SCSS</span>
+            <span class="tool-tag">TypeScript</span>
+            <span class="tool-tag">PrimeNG</span>
+            <span class="tool-tag">JIRA</span>
+            <span class="tool-tag">GitLab</span>
+            <span class="tool-tag">Docker</span>
+            <span class="tool-tag">Azure</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project">
+        <div class="project-header">
+          <div>
+            <h2>Kundenportal — Technologieunternehmen</h2>
+            <p class="project-company">Frontend Engineer</p>
+            <p class="project-period">10/2023 - 01/2024</p>
+          </div>
+        </div>
+        <div class="project-description">
+          Konzeption und Umsetzung eines Kundenportals zur Bereitstellung von
+          Dokumenten und Kontaktdaten für ein internationales
+          Technologieunternehmen.
+        </div>
+        <ul>
+          <li>
+            Entwicklung des Kundenportals mit React, Next.js und Tailwind CSS
+          </li>
+          <li>
+            Implementierung der Authentifizierung und des Rollen- und
+            Rechte-Systems via Firebase
+          </li>
+          <li>
+            Umsetzung des Datenmanagement mit Firestore und Firebase-Storage
+          </li>
+        </ul>
+        <div class="tools-section">
+          <span class="tools-label">Tools & Technologien:</span>
+          <div class="tools-list">
+            <span class="tool-tag">Next.js</span>
+            <span class="tool-tag">React</span>
+            <span class="tool-tag">Tailwind CSS</span>
+            <span class="tool-tag">Firebase Authentication</span>
+            <span class="tool-tag">Firestore</span>
+            <span class="tool-tag">GitLab</span>
+            <span class="tool-tag">Google Cloud</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="project">
+        <div class="project-header">
+          <div>
+            <h2>Skills Management Client — Avenga Germany</h2>
+            <p class="project-company">Frontend Engineer</p>
+            <p class="project-period">06/2023 – 10/2023</p>
+          </div>
+        </div>
+        <div class="project-description">
+          Konzeption und Umsetzung eines Clients für das Management von
+          Mitarbeiter-Skills.
+        </div>
+        <ul>
+          <li>
+            Konzeption und Erstellung von Figma Designs für Applikations-UI
+          </li>
+          <li>Umsetzung des Clients mit Next.js und Tailwind CSS</li>
+          <li>
+            Umsetzung Authentifizierung mit Rollen und Rechten via Firebase
+          </li>
+        </ul>
+        <div class="tools-section">
+          <span class="tools-label">Tools & Technologien:</span>
+          <div class="tools-list">
+            <span class="tool-tag">Next.js</span>
+            <span class="tool-tag">Tailwind CSS</span>
+            <span class="tool-tag">Firebase</span>
+            <span class="tool-tag">Figma</span>
+            <span class="tool-tag">GitLab</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 5 -->
+      <div class="project">
+        <div class="project-header">
+          <div>
+            <h2>Swiss Life — Landingpage</h2>
+            <p class="project-company">Frontend Engineer</p>
+            <p class="project-period">12/2022 – 02/2023</p>
+          </div>
+        </div>
+        <div class="project-description">
+          Entwicklung einer Landingpage für einen Versicherungsanbieter.
+        </div>
+        <ul>
+          <li>Umsetzung einer Landingpage mit HTML5 und CSS</li>
+          <li>
+            Verwendung der eigenen Pattern Library für die Umsetzung von
+            Komponenten
+          </li>
+          <li>Enger Austausch mit UI/UX bei der Umsetzung</li>
+        </ul>
+        <div class="tools-section">
+          <span class="tools-label">Tools & Technologien:</span>
+          <div class="tools-list">
+            <span class="tool-tag">HTML5</span>
+            <span class="tool-tag">CSS</span>
+            <span class="tool-tag">Docker</span>
+            <span class="tool-tag">JIRA</span>
+            <span class="tool-tag">GitLab</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 6 -->
+      <div class="project">
+        <div class="project-header">
+          <div>
+            <h2>Boehringer Ingelheim — Mobile Website</h2>
+            <p class="project-company">Frontend Engineer</p>
+            <p class="project-period">07/2022 – 12/2022</p>
+          </div>
+        </div>
+        <div class="project-description">
+          Konzeption und Entwicklung einer mobilen Webseite für
+          plattformübergreifende Zeitung-Services.
+        </div>
+        <ul>
+          <li>
+            Erstellung von Komponenten mit XSLT und Erweiterung um neue Features
+          </li>
+          <li>Styling-Überarbeitungen mit SCSS</li>
+          <li>
+            Implementierung von Zoom-Feature mit JS-Bibliothek für Desktop und
+            Mobilgeräte
+          </li>
+          <li>Erstellung von Cypress Tests</li>
+          <li>
+            Enger Austausch mit dem Kunden für regelmäßige Abnahme der Aufgaben
+          </li>
+        </ul>
+        <div class="tools-section">
+          <span class="tools-label">Tools & Technologien:</span>
+          <div class="tools-list">
+            <span class="tool-tag">XSLT</span>
+            <span class="tool-tag">CSS/SCSS</span>
+            <span class="tool-tag">JavaScript</span>
+            <span class="tool-tag">Cypress</span>
+            <span class="tool-tag">Docker</span>
+            <span class="tool-tag">JIRA</span>
+            <span class="tool-tag">GitLab</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 7 -->
+      <div class="project">
+        <div class="project-header">
+          <div>
+            <h2>GVV — Forschungsdaten Applikation</h2>
+            <p class="project-company">Frontend Engineer</p>
+            <p class="project-period">01/2021 – 02/2022</p>
+          </div>
+        </div>
+        <div class="project-description">
+          Konzeption und Entwicklung einer Applikation für die Anzeige und
+          Verwaltung von Forschungsdaten.
+        </div>
+        <ul>
+          <li>Umsetzung von Komponenten mit React</li>
+          <li>
+            Verwendung von TypeScript und SCSS für Erweiterung von Komponenten
+            und Umsetzung neuer Features
+          </li>
+          <li>Integration einer React-Bibliothek für das Nutzer-Onboarding</li>
+          <li>
+            Enger Austausch mit dem Kunden bei der Konzeption und regelmäßige
+            Präsentation der Ergebnisse
+          </li>
+        </ul>
+        <div class="tools-section">
+          <span class="tools-label">Tools & Technologien:</span>
+          <div class="tools-list">
+            <span class="tool-tag">React</span>
+            <span class="tool-tag">TypeScript</span>
+            <span class="tool-tag">CSS/SCSS</span>
+            <span class="tool-tag">React Tour</span>
+            <span class="tool-tag">Material UI</span>
+            <span class="tool-tag">Cypress</span>
+            <span class="tool-tag">Jest</span>
+            <span class="tool-tag">Docker</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 8 -->
+      <div class="project">
+        <div class="project-header">
+          <div>
+            <h2>FAZ — TYPO3 Komponenten</h2>
+            <p class="project-company">Frontend Engineer</p>
+            <p class="project-period">04/2021 – 05/2022</p>
+          </div>
+        </div>
+        <div class="project-description">
+          Entwicklung von Komponenten mit TYPO3 für Entwickler der Portale und
+          Webseiten.
+        </div>
+        <ul>
+          <li>
+            Umsetzung und Wartung von Komponenten in TYPO3 unter Nutzung von
+            HTML5, CSS und PHP
+          </li>
+        </ul>
+        <div class="tools-section">
+          <span class="tools-label">Tools & Technologien:</span>
+          <div class="tools-list">
+            <span class="tool-tag">HTML5</span>
+            <span class="tool-tag">CSS/SCSS</span>
+            <span class="tool-tag">TYPO3</span>
+            <span class="tool-tag">PHP</span>
+            <span class="tool-tag">JIRA</span>
+            <span class="tool-tag">GitLab</span>
+            <span class="tool-tag">Docker</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 9 -->
+      <div class="project">
+        <div class="project-header">
+          <div>
+            <h2>Scalara — Smart Home Applikation</h2>
+            <p class="project-company">Frontend Engineer</p>
+            <p class="project-period">12/2019 – 07/2020</p>
+          </div>
+        </div>
+        <div class="project-description">
+          Umsetzung und Qualitätssicherung einer Smart Home Applikation.
+        </div>
+        <ul>
+          <li>Entwicklung neuer Features mit React</li>
+          <li>
+            Umsetzung einer React-Komponenten-Bibliothek mit TypeScript und TSX
+          </li>
+          <li>Testing der Smart Home Integration und Sensoren</li>
+          <li>Anpassung von Styles und Layout mit SCSS</li>
+        </ul>
+        <div class="tools-section">
+          <span class="tools-label">Tools & Technologien:</span>
+          <div class="tools-list">
+            <span class="tool-tag">React</span>
+            <span class="tool-tag">TypeScript</span>
+            <span class="tool-tag">TSX</span>
+            <span class="tool-tag">CSS/SCSS</span>
+            <span class="tool-tag">Cypress</span>
+            <span class="tool-tag">Jest</span>
+            <span class="tool-tag">Docker</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 10 -->
+      <div class="project">
+        <div class="project-header">
+          <div>
+            <h2>Swiss Life — Mobile Apps</h2>
+            <p class="project-company">Frontend Engineer</p>
+            <p class="project-period">10/2020 – 01/2021</p>
+          </div>
+        </div>
+        <div class="project-description">
+          Umsetzung mobiler Apps für Versicherungsvorgänge.
+        </div>
+        <ul>
+          <li>Erstellung von Komponenten mit React/React Native</li>
+          <li>
+            Erstellung und Wartung von mehreren mobilen Apps mit Hilfe von Expo
+          </li>
+          <li>Integration des CMS mit Kirby</li>
+        </ul>
+        <div class="tools-section">
+          <span class="tools-label">Tools & Technologien:</span>
+          <div class="tools-list">
+            <span class="tool-tag">React</span>
+            <span class="tool-tag">React Native</span>
+            <span class="tool-tag">Expo</span>
+            <span class="tool-tag">JavaScript</span>
+            <span class="tool-tag">Kirby CMS</span>
+            <span class="tool-tag">Jest</span>
+            <span class="tool-tag">Figma</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>
+        &copy; 2026 Adrian Karbasi. Alle Projekte sind exemplarisch und zeigen
+        ausgewählte Arbeiten aus meiner professionellen Laufbahn.
+      </p>
+    </footer>
+  </body>
+</html>

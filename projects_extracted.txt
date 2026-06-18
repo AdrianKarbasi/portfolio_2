@@ -1,0 +1,153 @@
+=== PAGE 1 ===
+Erfahrungen  (ein Auszug von Projekten der letzten Jahre)  
+ 
+ 
+Frontend Engineer für die Konzeption und Entwicklung eines Design Systems für 
+plattformübergreifende Banken -Services für eine Lichtensteinische Bank.  
+ 
+● Erstellung von Frontend Komponenten mit Handlebars, SCSS und 
+Javacript/TypeScript.  
+● Erstellung umfangreicher Dokumentationen, inklusive der JS -API-Beschreibungen der 
+Komponenten für alle Stakeholder.   
+● Migration von Javascript nach Typescript.  
+● Planung und Integration von Teststrategien zur automatisierten Qualitätssicherung 
+mit Cypress & Vitest.  
+● Enger Austausch mit UI/UX bei der Konzeption.  
+● Accessibility Improvements für das BFSG.  
+  
+Tools: TypeScript/JavaScript, HTML5, CSS/SCSS, BEM, Handlebars, JSON, Variable Fonts, AG 
+Grid, autom. Tests, Vitest, Cypress, BrowserStack, Webpack, Gulp, Babel, ESLint, Stylelint, 
+Prettier, GIT (BitBucket), NPM, Style Dictionary, Sketch, Design Systeme, Accessib ility, VS 
+Code, Kanban, Jira, Confluence  
+ 
+02/2024 – aktuell Liechtensteinische Landesbank  
+ 
+ 
+ 
+Frontend Engineer für die Konzeption und Entwicklung einer Angebotsstrecke für ein 
+Telekommunikationsunternehmen mit Sitz in Deutschland.  
+ 
+● Erstellung von Frontend Komponenten mit Angular.  
+● Umsetzung des Layouts durch den Einsatz von SCSS.  
+● Realisierung einer Angebotsstrecke mit Angular und TypeScript.  
+● Verwendung und Integration von PrimeNG.  
+● Sicherung der Codequalität durch Einsatz von Konventionen, Reviews und Pair -
+Programming.  
+ 
+Tools: Angular, CSS/SCSS, TypeScript, PrimeNG, Zeplin, JIRA, GitLab, Docker, VS Code, 
+SCRUM, Azure  
+ 
+01/2023 – 05/2023 Pyur  
+ 
+
+=== PAGE 2 ===
+ 
+ 
+Frontend Engineer für die Konzeption und Umsetzung eines Kundenportals zur 
+Bereitstellung von Dokumenten und Kontaktdaten für ein internationales 
+Technologieunternehmen.  
+ 
+● Entwicklung des Kundenportals mit React, Next.js und Tailwind CSS.  
+● Implementierung der Authentifizierung und des Rollen - und Rechte -Systems via 
+Firebase.  
+● Umsetzung des Datenmanagement mit Firestore und Firebase -Storage.  
+ 
+Tools: Next.js, Tailwind CSS, Firebase Authentication, Firestore, GitLab, Google Cloud  
+ 
+10/2023 - 01/2024 Avenga Germany GmbH  
+ 
+ 
+ 
+Frontend Engineer für die Konzeption und Umsetzung eines Clients für das Management 
+von Mitarbeiter -Skills 
+ 
+● Konzeption und Erstellung von Figma Designs für Applikations -UI 
+● Umsetzung des Clients mit Next.js und Tailwind CSS  
+● Umsetzung Authentifizierung mit Rollen und Rechten via Firebase  
+● Tools: Next.js, Tailwind CSS, Firebase Authentication, Firestore, GitLab  
+ 
+06/2023 – 10/2023 Avenga Germany GmbH  
+ 
+ 
+ 
+Frontend Engineer für die Entwicklung einer Landingpage für einen 
+Versicherungsanbieter  
+ 
+● Umsetzung einer Landingpage mit HTML5, CSS  
+● Verwendung der eigenen Pattern Library für die Umsetzung von Komponenten  
+● Enger Austausch mit UI/UX bei der Umsetzung  
+● Tools:  HTML5, CSS, Docker, JIRA, GitLab  
+ 
+12/2022 – 02/2023 Swiss Life  
+ 
+ 
+ 
+
+=== PAGE 3 ===
+Frontend Engineer für die Konzeption und Entwicklung einer Applikation für die Anzeige 
+und Verwaltung von Forschungsdaten  
+ 
+● Umsetzung von Komponenten mit React  
+● Verwendung von TypeScript und SCSS für Erweiterung von Komponenten und 
+Umsetzung neuer Features  
+● Integration einer React -Bibliothek für das Nutzer -Onboarding  
+● Enger Austausch mit dem Kunden bei der Konzeption und regelmäßige Präsentation 
+der Ergebnisse  
+● Tools:  HTML5, CSS/SCSS, TypeScript, React, React Tour, TSX, React Material UI, 
+Docker, JIRA, GitLab, Cypress, Jest, MySQL, Pair -Programming  
+ 
+07/2022 – 12/2022 Boehringer Ingelheim  
+ 
+ 
+ 
+Frontend Engineer für die Konzeption und Entwicklung einer mobilen Webseite für 
+plattformübergreifende Zeitung -Services  
+ 
+● Erstellung von Komponenten mit XSLT und Erweiterung um neue Features  
+● Styling -Überarbeitungen mit SCSS  
+● Implementierung von Zoom -Feature mit JS -Bibliothek für Desktop und Mobilgeräte  
+● Erstellung von Cypress Tests  
+● Enger Austausch mit dem Kunden für regelmäßige Abnahme der Aufgaben  
+● Tools:  XSLT, CSS/SCSS, JavaScript, Docker, JIRA, GitLab, CI/CD, Cypress, Pair -
+Programming, Zeplin, Postman, Jenkins  
+ 
+04/2021 – 05/2022 FAZ  
+ 
+ 
+ 
+Entwicklung von Komponenten mit TYPO3 für Entwickler der Portale und Webseiten  
+ 
+● Umsetzung und Wartung von Komponenten in TYPO3 unter Nutzung von HTML5, 
+CSS und PHP  
+● Tools:  HTML5, CSS/SCSS, TYPO3, PHP, JIRA, GitLab, Docker  
+ 
+01/2021 – 02/2022 GVV  
+ 
+ 
+
+=== PAGE 4 ===
+ 
+Frontend Engineer für die Umsetzung mobiler Apps für Versicherungsvorgänge  
+ 
+● Erstellung von Komponenten mit React/React Native  
+● Erstellung und Wartung von mehreren mobilen Apps mit Hilfe von Expo  
+● Integration des CMS mit Kirby  
+● Tools:  HTML5, CSS/SCSS, React, JSX, React Native, Expo, JSON, Kirby, Docker, Jest, 
+Figma, PHP, Mobile Testing, Prettier  
+ 
+10/2020 – 01/2021 Swiss Life  
+ 
+ 
+ 
+Frontend Engineer für die Umsetzung und Qualitätssicherung einer Smart Home 
+Applikation  
+ 
+● Entwicklung neuer Features mit React  
+● Umsetzung einer React -Komponenten -Bibliothek mit TypeScript und TSX  
+● Testing der Smart Home Integration und Sensoren  
+● Anpassung von Styles und Layout mit SCSS  
+● Tools:  HTML5, CSS/SCSS, React, TSX, Docker, Cypress, Jest, Prettier, JIRA, GitLab  
+ 
+12/2019 – 07/2020 Scalara  
+ 
+

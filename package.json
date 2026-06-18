@@ -1,0 +1,8 @@
+{
+  "name": "bewerbungskram",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "lint:css": "stylelint \"**/*.css\" --fix"
+  }
+}

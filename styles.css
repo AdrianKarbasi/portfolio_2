@@ -1,0 +1,351 @@
+:root {
+  --bg: #f6f7fb;
+  --panel: #0b2545;
+  --accent: #1f6feb;
+  --muted: #6b7280;
+  --text: #0b1220;
+  --paper: #ffffff;
+  --max-width: 1000px;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 32px 16px;
+}
+.sheet {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 28px;
+}
+.sidebar {
+  background: linear-gradient(180deg, var(--panel), #12325a);
+  color: #fff;
+  padding: 28px;
+  border-radius: 10px;
+  height: 100%;
+}
+.profile .name {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: 0.4px;
+}
+.meta {
+  margin: 6px 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 13px;
+}
+.photo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+.photo img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.15);
+}
+.section {
+  margin-top: 22px;
+}
+.section h2 {
+  margin: 0 0 10px 0;
+  font-size: 15px;
+  color: #e6eefc;
+}
+.sidebar ul {
+  padding-left: 18px;
+  margin: 0;
+}
+.sidebar li {
+  margin: 6px 0;
+  font-size: 14px;
+}
+.main {
+  background: var(--paper);
+  padding: 28px;
+  border-radius: 10px;
+}
+.main .section {
+  margin-bottom: 20px;
+}
+.main h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: var(--panel);
+}
+.job h4 {
+  margin: 6px 0 4px 0;
+}
+.period {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.skills-grid p {
+  margin: 6px 0;
+  color: #333;
+  font-size: 14px;
+}
+.tools {
+  padding-left: 18px;
+  margin: 0;
+}
+.tools li {
+  margin: 6px 0;
+}
+
+@media (max-width: 880px) {
+  .sheet {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    order: 2;
+  }
+  .main {
+    order: 1;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.export-footer {
+  display: none;
+}
+
+@media print {
+  .export-footer {
+    display: none !important;
+  }
+  @page {
+    size: A4;
+    margin: 0.4in;
+    margin-top: 0.2in;
+    margin-bottom: 0.2in;
+  }
+  @supports (margin-block: 1in) {
+    @page {
+      margin-block: 0.2in;
+      margin-inline: 0.4in;
+    }
+  }
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  * {
+    box-shadow: none !important;
+  }
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    background: #fff !important;
+  }
+  body {
+    padding: 0 !important;
+  }
+  .sheet {
+    max-width: 100%;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 0;
+  }
+  .sidebar {
+    background: linear-gradient(180deg, #0b2545, #12325a) !important;
+    color: #fff !important;
+    padding: 20px;
+    margin: 0;
+    border-radius: 0;
+    height: auto;
+    grid-column: 1;
+    order: unset;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  .main {
+    background: #fff;
+    padding: 20px;
+    border-radius: 0;
+    grid-column: 2;
+    order: unset;
+  }
+  .profile .name {
+    margin: 0;
+    font-size: 22px;
+    letter-spacing: 0.4px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #fff !important;
+  }
+  .meta {
+    margin: 4px 0;
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 12px;
+  }
+  .photo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+  .photo img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.15);
+  }
+  .sidebar .section {
+    margin-top: 18px;
+  }
+  .sidebar h2 {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    color: #e6eefc !important;
+    font-weight: 600;
+  }
+  .sidebar ul {
+    padding-left: 18px;
+    margin: 0;
+    list-style: disc;
+  }
+  .sidebar li {
+    margin: 5px 0;
+    font-size: 12px;
+    color: #fff !important;
+  }
+  .main .section {
+    margin-bottom: 18px;
+    page-break-inside: avoid;
+  }
+  .main h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #0b2545;
+    font-weight: 700;
+    font-size: 13px;
+  }
+  .job {
+    page-break-inside: avoid;
+    margin-bottom: 10px;
+  }
+  .job h4 {
+    margin: 6px 0 4px 0;
+    font-weight: 700;
+    font-size: 12px;
+    color: #0b2545;
+  }
+  .period {
+    color: #666;
+    font-size: 11px;
+    margin-bottom: 6px;
+    font-style: italic;
+  }
+  .job ul {
+    margin: 6px 0;
+    padding-left: 18px;
+    list-style: disc;
+  }
+  .job li {
+    font-size: 11px;
+    margin: 3px 0;
+    color: #333;
+    line-height: 1.5;
+  }
+  .main .section ul {
+    margin: 6px 0;
+    padding-left: 18px;
+    list-style: disc;
+  }
+  .main .section ul li {
+    font-size: 11px;
+    margin: 3px 0;
+    color: #333;
+    line-height: 1.5;
+  }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .skills-grid div {
+    page-break-inside: avoid;
+  }
+  .skills-grid strong {
+    font-size: 12px;
+    color: #0b2545;
+    font-weight: 700;
+  }
+  .skills-grid p {
+    margin: 6px 0;
+    color: #333;
+    font-size: 11px;
+    line-height: 1.5;
+  }
+  .tools {
+    padding-left: 18px;
+    margin: 0;
+    list-style: disc;
+  }
+  .tools li {
+    margin: 5px 0;
+    font-size: 11px;
+    color: #333;
+  }
+  a::after {
+    content: none;
+  }
+}
+
+@media screen {
+  .export-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+    padding: 20px;
+  }
+  .export-btn {
+    padding: 12px 24px;
+    background: #0b2545;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .export-btn:hover {
+    background: #12325a;
+  }
+}
