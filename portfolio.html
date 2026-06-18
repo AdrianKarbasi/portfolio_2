@@ -59,6 +59,31 @@
         opacity: 1;
         transform: none;
       }
+
+      /* ── Mobile Menu ── */
+      #mobile-menu {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        background: #051424;
+        border-top: 1px solid #3e484f;
+      }
+      #mobile-menu.open { display: flex; }
+      #mobile-menu a {
+        padding: 14px 24px;
+        font-size: 16px;
+        color: #bdc8d1;
+        border-bottom: 1px solid #1c2b3c;
+        text-decoration: none;
+        transition: color 0.2s, background 0.2s;
+      }
+      #mobile-menu a:active { background: #122131; color: #8ed5ff; }
+
+      /* ── Hero headline scales down on mobile ── */
+      @media (max-width: 640px) {
+        .hero-headline { font-size: 28px !important; line-height: 1.2 !important; }
+        .hero-sub { font-size: 16px !important; }
+      }
     </style>
     <script id="tailwind-config">
       tailwind.config = {
@@ -216,15 +241,24 @@
           </a>
         </nav>
         <!-- Mobile Menu Trigger -->
-        <button class="md:hidden text-primary">
+        <button id="menu-btn" class="md:hidden text-primary" aria-label="Menü öffnen">
           <span class="material-symbols-outlined">menu</span>
         </button>
       </div>
+      <!-- Mobile Nav Dropdown -->
+      <nav id="mobile-menu" aria-label="Mobile Navigation">
+        <a href="#about">Über mich</a>
+        <a href="#experience">Erfahrung</a>
+        <a href="#projects">Projekte</a>
+        <a href="#skills">Fähigkeiten</a>
+        <a href="#contact">Kontakt</a>
+        <a href="lebenslauf_2.html">Lebenslauf</a>
+      </nav>
     </header>
     <main class="pt-16">
       <!-- Hero Section -->
       <section
-        class="min-h-[819px] flex flex-col justify-center items-center text-center px-gutter py-section-gap-mobile md:py-section-gap-desktop max-w-container-max mx-auto"
+        class="min-h-[600px] md:min-h-[819px] flex flex-col justify-center items-center text-center px-gutter py-section-gap-mobile md:py-section-gap-desktop max-w-container-max mx-auto"
       >
         <div
           class="inline-block px-stack-md py-unit bg-primary/10 border border-primary/20 rounded-full mb-stack-lg"
@@ -234,14 +268,14 @@
           >
         </div>
         <h1
-          class="font-display text-display text-on-surface max-w-4xl mb-stack-md leading-tight"
+          class="hero-headline font-display text-display text-on-surface max-w-4xl mb-stack-md leading-tight"
         >
           Frontend-Softwareentwickler mit
           <span class="text-primary">4 Jahren</span> Erfahrung in der
           Entwicklung barrierefreier, komponentengetriebener Anwendungen.
         </h1>
         <p
-          class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-stack-lg"
+          class="hero-sub font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-stack-lg"
         >
           Erfahrung in der Entwicklung moderner Webanwendungen für Banking,
           Telekommunikation und Healthcare – mit React, Next.js, Angular, Vue
@@ -601,7 +635,7 @@
             <div
               class="md:col-span-12 group technical-card rounded-xl overflow-hidden flex flex-col md:flex-row"
             >
-              <div class="md:w-1/2 relative h-64 md:h-auto overflow-hidden">
+              <div class="w-full md:w-1/2 relative h-56 md:h-auto overflow-hidden">
                 <img
                   alt="Electronic Partner B2B Shop"
                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -609,7 +643,7 @@
                 />
               </div>
               <div
-                class="md:w-1/2 p-stack-lg md:p-12 flex flex-col justify-center"
+                class="w-full md:w-1/2 p-stack-lg md:p-12 flex flex-col justify-center"
               >
                 <div class="flex justify-between items-start mb-stack-md">
                   <h3 class="font-headline-lg text-headline-lg">
@@ -880,6 +914,22 @@
       </div>
     </footer>
     <script>
+      // Mobile menu toggle
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('open');
+        menuBtn.querySelector('.material-symbols-outlined').textContent =
+          mobileMenu.classList.contains('open') ? 'close' : 'menu';
+      });
+      // Close menu on link click
+      mobileMenu.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          mobileMenu.classList.remove('open');
+          menuBtn.querySelector('.material-symbols-outlined').textContent = 'menu';
+        });
+      });
+
       // Smooth scrolling for anchor links
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener('click', function (e) {
